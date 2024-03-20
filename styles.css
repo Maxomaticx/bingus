@@ -4,8 +4,7 @@ body {
     font-family: Arial, sans-serif;
     text-align: center; /* Center align all text */
     background-image: url('BingusHDPhoto.png'); /* Background image URL */
-    background-size: contain;
-    background-repeat: no-repeat;
+    background-size: cover; /* Cover the entire viewport */
     background-position: center; /* Center the background image */
 }
 
@@ -43,4 +42,11 @@ body {
 
 .active {
     display: block;
+}
+
+/* Style for the "Toggle Editor" button container */
+.toggle-editor-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
 }

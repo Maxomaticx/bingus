@@ -14,12 +14,17 @@
 
 <div class="container">
     <div class="page active">
-        <h2>Bingues</h2>
-        <p></p>
+        <h2>Home Page</h2>
+        <p>Welcome to Bingus Friends!</p>
     </div>
 </div>
 
-<div id="editor-container"></div>
+<div id="editor-container" style="display: none;"></div> <!-- Rich text editor container, initially hidden -->
+
+<!-- "Toggle Editor" button positioned on the right side -->
+<div class="toggle-editor-container">
+    <a href="#" id="toggleEditor">Toggle Editor</a>
+</div>
 
 <!-- Include Quill.js -->
 <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
