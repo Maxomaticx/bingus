@@ -5,63 +5,82 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bingus Friends</title>
     <style>
-        body, html {
+        body {
             margin: 0;
             padding: 0;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #f0f0f0; /* Background color for the entire page */
+            font-family: Arial, sans-serif;
         }
-        .container {
-            max-width: 100%;
-            max-height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
+        .navbar {
+            background-color: #333; /* Navbar background color */
+            overflow: hidden;
         }
-        .image {
-            max-width: 100%;
-            max-height: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-        }
-        .buttons-container {
-            position: absolute;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            z-index: 1;
-        }
-        .buttons-container.left {
-            left: 20px; /* Adjust the position as needed */
-        }
-        .buttons-container.right {
-            right: 20px; /* Adjust the position as needed */
-        }
-        .button {
-            margin: 10px;
-            padding: 10px 20px;
-            background-color: #3498db; /* Change color as needed */
+        .navbar a {
+            float: left;
+            display: block;
             color: #fff;
             text-align: center;
+            padding: 14px 20px;
             text-decoration: none;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
         }
-        .button:hover {
-            background-color: #2980b9; /* Change color as needed */
+        .navbar a:hover {
+            background-color: #ddd; /* Hover background color */
+            color: #333; /* Hover text color */
+        }
+        .container {
+            padding: 20px;
+        }
+        .page {
+            display: none;
+        }
+        .active {
+            display: block;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <img class="image" src="your_image_url.jpg" alt="Bingus Image"> <!-- Replace 'your_image_url.jpg' with the URL of your image -->
-        <div class="buttons-container left">
-            <button class="button">Button 1
+
+<div class="navbar">
+    <a href="#" id="addPage">+</a>
+</div>
+
+<div class="container">
+    <div class="page active">
+        <h2>Home Page</h2>
+        <p>Welcome to Bingus Friends!</p>
+    </div>
+</div>
+
+<script>
+    document.getElementById("addPage").addEventListener("click", function() {
+        // Increment the page count
+        var pageCount = document.querySelectorAll('.page').length + 1;
+
+        // Create a new page link and page div
+        var newPageLink = document.createElement("a");
+        newPageLink.href = "#";
+        newPageLink.textContent = "Page " + pageCount;
+        newPageLink.addEventListener("click", function() {
+            showPage(pageCount);
+        });
+        document.querySelector('.navbar').appendChild(newPageLink);
+
+        var newPageDiv = document.createElement("div");
+        newPageDiv.classList.add("page");
+        newPageDiv.innerHTML = "<h2>Page " + pageCount + "</h2><p>This is page " + pageCount + "</p>";
+        document.querySelector('.container').appendChild(newPageDiv);
+
+        // Show the newly added page
+        showPage(pageCount);
+    });
+
+    function showPage(pageNumber) {
+        var pages = document.querySelectorAll('.page');
+        pages.forEach(function(page) {
+            page.classList.remove("active");
+        });
+        pages[pageNumber - 1].classList.add("active");
+    }
+</script>
+
+</body>
+</html>
