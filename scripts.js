@@ -31,6 +31,14 @@ function showPage(pageNumber) {
     pages[pageNumber - 1].classList.add("active");
 }
 
+document.getElementById("toggleEditor").addEventListener("click", function() {
+    var editorContainer = document.getElementById("editor-container");
+    if (editorContainer.style.display === "none") {
+        editorContainer.style.display = "block";
+    } else {
+        editorContainer.style.display = "none";
+    }
+});
 
 
 
