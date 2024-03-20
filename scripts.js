@@ -20,11 +20,9 @@ document.getElementById("addPage").addEventListener("click", function() {
 
     // Show the newly added page
     showPage(pageCount);
-
-    // Move the "+" button to the right
-    plusButton.style.float = "right";
 });
 
+// Function to show a specific page
 function showPage(pageNumber) {
     var pages = document.querySelectorAll('.page');
     pages.forEach(function(page) {
@@ -32,6 +30,7 @@ function showPage(pageNumber) {
     });
     pages[pageNumber - 1].classList.add("active");
 }
+
 
 
 
