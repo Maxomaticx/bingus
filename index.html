@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bingus Friends</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0; /* Background color for the entire page */
+        }
+        .container {
+            max-width: 100%;
+            max-height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        .image {
+            max-width: 100%;
+            max-height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .buttons-container {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 1;
+        }
+        .buttons-container.left {
+            left: 20px; /* Adjust the position as needed */
+        }
+        .buttons-container.right {
+            right: 20px; /* Adjust the position as needed */
+        }
+        .button {
+            margin: 10px;
+            padding: 10px 20px;
+            background-color: #3498db; /* Change color as needed */
+            color: #fff;
+            text-align: center;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background-color: #2980b9; /* Change color as needed */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img class="image" src="your_image_url.jpg" alt="Bingus Image"> <!-- Replace 'your_image_url.jpg' with the URL of your image -->
+        <div class="buttons-container left">
+            <button class="button">Button 1
