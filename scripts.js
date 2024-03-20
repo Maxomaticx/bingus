@@ -31,6 +31,7 @@ function showPage(pageNumber) {
     pages[pageNumber - 1].classList.add("active");
 }
 
+// Initialize Quill editor
 var quill = new Quill('#editor-container', {
     theme: 'snow'  // Specify the theme (snow, bubble)
 });
