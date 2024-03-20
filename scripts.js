@@ -9,7 +9,9 @@ document.getElementById("addPage").addEventListener("click", function() {
     newPageLink.addEventListener("click", function() {
         showPage(pageCount);
     });
-    document.querySelector('.navbar').appendChild(newPageLink);
+
+    var plusButton = document.getElementById("addPage");
+    plusButton.parentElement.insertBefore(newPageLink, plusButton); // Insert before the plus button
 
     var newPageDiv = document.createElement("div");
     newPageDiv.classList.add("page");
@@ -20,7 +22,7 @@ document.getElementById("addPage").addEventListener("click", function() {
     showPage(pageCount);
 
     // Move the "+" button to the right
-    document.getElementById("addPage").style.float = "right";
+    plusButton.style.float = "right";
 });
 
 function showPage(pageNumber) {
@@ -30,6 +32,7 @@ function showPage(pageNumber) {
     });
     pages[pageNumber - 1].classList.add("active");
 }
+
 
 
 var quill = new Quill('#editor-container', {
