@@ -3,10 +3,7 @@ body {
     padding: 0;
     font-family: Arial, sans-serif;
     text-align: center; /* Center align all text */
-    background-image: url('BingusHDPhoto.png'); /* Background image URL */
-    background-size: 5%; /* Cover the entire viewport */
-    background-repeat: no-repeat;
-    background-position: center; /* Center the background image */
+
 }
 
 .navbar {
