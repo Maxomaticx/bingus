@@ -1,0 +1,39 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    text-align: center; /* Center align all text */
+    background-image: url('BingusHDPhoto.png'); /* Background image URL */
+    background-size: contain; /* Cover the entire viewport */
+    background-position: center; /* Center the background image */
+}
+.navbar {
+    background-color: rgba(51, 51, 51, 0.7); /* Navbar background color with transparency */
+    overflow: hidden;
+    text-align: center; /* Center align navbar links */
+}
+.navbar a {
+    display: inline-block; /* Make navbar links display as blocks */
+    color: #fff;
+    padding: 14px 20px;
+    text-decoration: none;
+}
+.navbar a:hover {
+    background-color: #ddd; /* Hover background color */
+    color: #333; /* Hover text color */
+}
+.container {
+    padding: 20px;
+}
+.page {
+    display: none;
+    text-align: left; /* Align page content to the left */
+    margin: 0 auto; /* Center the page content */
+    max-width: 800px; /* Limit the width of page content */
+    background-color: rgba(255, 255, 255, 0.8); /* Page background color with transparency */
+    padding: 20px;
+    border-radius: 10px;
+}
+.active {
+    display: block;
+}

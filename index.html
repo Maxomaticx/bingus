@@ -4,47 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bingus Friends</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            text-align: center; /* Center align all text */
-            background-image: url('BingusHDPhoto.png'); /* Background image URL */
-            background-size: cover; /* Cover the entire viewport */
-            background-position: center; /* Center the background image */
-        }
-        .navbar {
-            background-color: rgba(51, 51, 51, 0.7); /* Navbar background color with transparency */
-            overflow: hidden;
-            text-align: center; /* Center align navbar links */
-        }
-        .navbar a {
-            display: inline-block; /* Make navbar links display as blocks */
-            color: #fff;
-            padding: 14px 20px;
-            text-decoration: none;
-        }
-        .navbar a:hover {
-            background-color: #ddd; /* Hover background color */
-            color: #333; /* Hover text color */
-        }
-        .container {
-            padding: 20px;
-        }
-        .page {
-            display: none;
-            text-align: left; /* Align page content to the left */
-            margin: 0 auto; /* Center the page content */
-            max-width: 800px; /* Limit the width of page content */
-            background-color: rgba(255, 255, 255, 0.8); /* Page background color with transparency */
-            padding: 20px;
-            border-radius: 10px;
-        }
-        .active {
-            display: block;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
 
@@ -59,37 +19,7 @@
     </div>
 </div>
 
-<script>
-    document.getElementById("addPage").addEventListener("click", function() {
-        // Increment the page count
-        var pageCount = document.querySelectorAll('.page').length + 1;
-
-        // Create a new page link and page div
-        var newPageLink = document.createElement("a");
-        newPageLink.href = "#";
-        newPageLink.textContent = "Page " + pageCount;
-        newPageLink.addEventListener("click", function() {
-            showPage(pageCount);
-        });
-        document.querySelector('.navbar').appendChild(newPageLink);
-
-        var newPageDiv = document.createElement("div");
-        newPageDiv.classList.add("page");
-        newPageDiv.innerHTML = "<h2>Page " + pageCount + "</h2><p>This is page " + pageCount + "</p>";
-        document.querySelector('.container').appendChild(newPageDiv);
-
-        // Show the newly added page
-        showPage(pageCount);
-    });
-
-    function showPage(pageNumber) {
-        var pages = document.querySelectorAll('.page');
-        pages.forEach(function(page) {
-            page.classList.remove("active");
-        });
-        pages[pageNumber - 1].classList.add("active");
-    }
-</script>
+<script src="scripts.js"></script>
 
 </body>
 </html>
