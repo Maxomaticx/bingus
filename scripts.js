@@ -1,4 +1,4 @@
-<script>
+
     document.getElementById("addPage").addEventListener("click", function() {
         // Increment the page count
         var pageCount = document.querySelectorAll('.page').length + 1;
@@ -31,4 +31,10 @@
         });
         pages[pageNumber - 1].classList.add("active");
     }
-</script>
+
+
+    var quill = new Quill('#editor-container', {
+        theme: 'snow'  // Specify the theme (snow, bubble)
+    });
+
+
