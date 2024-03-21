@@ -31,6 +31,12 @@ function showPage(pageNumber) {
     pages[pageNumber - 1].classList.add("active");
 }
 
+
+document.getElementById("homePage").addEventListener("click", function() {
+    showPage(1); // Assuming your home page is the first page
+});
+
+
 // Initialize Quill editor
 var quill = new Quill('#editor-container', {
     theme: 'snow'  // Specify the theme (snow, bubble)
