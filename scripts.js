@@ -11,7 +11,8 @@ document.getElementById("addPage").addEventListener("click", function() {
     });
 
     var plusButton = document.getElementById("addPage");
-    plusButton.parentElement.insertBefore(newPageLink, plusButton); // Insert before the plus button
+    // Ensure the new page link is inserted before the plus button
+    plusButton.parentElement.insertBefore(newPageLink, plusButton);
 
     var newPageDiv = document.createElement("div");
     newPageDiv.classList.add("page");
@@ -28,14 +29,16 @@ function showPage(pageNumber) {
     pages.forEach(function(page) {
         page.classList.remove("active");
     });
-    pages[pageNumber - 1].classList.add("active");
+    if (pageNumber > 0 && pageNumber <= pages.length) {
+        pages[pageNumber - 1].classList.add("active");
+    }
 }
 
-
+// Event listener for the "Home" button
 document.getElementById("homePage").addEventListener("click", function() {
-    showPage(1); // Assuming your home page is the first page
+    // Assuming your home page is the first page
+    showPage(1);
 });
-
 
 // Initialize Quill editor
 var quill = new Quill('#editor-container', {
